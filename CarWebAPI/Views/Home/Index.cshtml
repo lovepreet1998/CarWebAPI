@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To Car Web API</h1>
+</div>
+<div class="row">
+    <div class="col-md-6 text-center">
+        <button class="btn btn-success" onclick="displayAllCars()">View All Cars</button>
+    </div>
+    <div class="col-md-6 text-center">
+        <button class="btn btn-info" onclick="showCarForm()">Add New Car</button>
+    </div>
+</div>
+<div class="row mt-2" id="car_details">
+
+</div>
+<div id="car_form" class="mt-2">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 id="title_message">Add New Car</h1>
+        </div>
+        <div class="col-md-12">
+            <form>
+                <div class="form-group">
+                    <label for="company_name">Enter Company Name: </label>
+                    <input type="text" class="form-control" id="company_name" />
+                    <input type="hidden" class="form-control" id="car_id" />
+                </div>
+                <div class="form-group">
+                    <label for="model_name">Enter Model: </label>
+                    <input type="text" class="form-control" id="model_name" />
+                </div>
+                <div class="form-group">
+                    <label for="features">Enter Car Feature: </label>
+                    <textarea class="form-control" id="features"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="button" onclick="saveDetails()" class="btn btn-dark">Save Car Details</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-12" id="result">
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            displayAllCars();
+        });
+    </script>
+}
